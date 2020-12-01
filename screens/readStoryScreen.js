@@ -4,7 +4,7 @@ import {StyleSheet,Text,View} from 'react-native';
 export default class readStoryScreen extends React.Component{
     render(){
         return(
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
                 <Text>
                     Read Story
                 </Text>
