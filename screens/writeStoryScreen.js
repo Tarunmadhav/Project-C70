@@ -1,17 +1,39 @@
 import React from 'react';
 import {Header} from "react-native-elements";
-import { StyleSheet, Text, View,Image,TextInput } from 'react-native';
+import { StyleSheet, Text, View,Image,TextInput,Modal,KeyboardAvoidingView } from 'react-native';
 
-export default class writeStoryScreen extends React.Component(){
+export default class writeStoryScreen extends React.Component{
     render(){
         return(
-          <View>
-              <Header style={styles.Header}>
-              Bobby the Bear and His Missing Dinner
-              </Header>
-              <Text>
-              Bobby the Bear is sitting down to enjoy his dinner when his friend, Fred the Fox, stops by to say hello. When Bobby the Bear returns to eat his meal, he discovers it is missing. Bobby the Bear, with the help of his friends, searches for his dinner. The story takes an unexpected twist, and Bobby the Bear helps a friend learn the importance of not stealing and being honest.
-              </Text>
+          <View  style={{flex:1}}>
+              <View>
+                 <View>
+                  <TextInput
+        style={styles.inputBox}
+        placeholder="Name"
+        multiline={true}
+        onChangeText={(text)=>{this.setState({address:text})}}/>
+        <TextInput
+        style={styles.inputBox}
+        placeholder="AuthorName"
+        multiline={true}
+        onChangeText={(text)=>{this.setState({address:text})}}/>
+        <TextInput
+        style={styles.inputBox}
+        placeholder="Story"
+        multiline={true}
+        onChangeText={(text)=>{this.setState({address:text})}}/> 
+              </View>
+              <View>
+                 <TouchableOpacity style={styles.Button}
+        onPress={()=>this.setState({"isModalVisible":true})}>
+            <Text>
+                SUBMIT
+            </Text>  
+              </View>
+          
+              </View>
+             
           </View>  
         )
     }
@@ -19,14 +41,27 @@ export default class writeStoryScreen extends React.Component(){
 
 
 const styles = StyleSheet.create({
-    Header:{
-        textAlign:"center",
-     textSize:40
-    
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop:20
+    },
+    Button:{
+      backgroundColor: '#2196F3',
+      padding: 10,
+      margin: 10
     },
     text:{
-        textSize:20,
-        textAlign:"justify",
-        flex:1
-    }
-})
+      fontSize: 15,
+      textAlign: 'center',
+      marginTop: 10
+    },
+    inputBox:{
+      width: 200,
+      height: 40,
+      borderWidth: 1.5,
+      borderRightWidth: 0,
+      fontSize: 20
+    },
+    })
