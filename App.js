@@ -14,7 +14,7 @@ render(){
 }
 
 }
-  const AppContainer=createAppContainer(TabNavigator);
+const AppContainer=createAppContainer(TabNavigator);
 const TabNavigator = createBottomTabNavigator({
   readStory:  readStoryScreen,
   writeStory: writeStoryScreen,

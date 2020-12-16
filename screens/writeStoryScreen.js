@@ -3,38 +3,32 @@ import {Header} from "react-native-elements";
 import { StyleSheet, Text, View,Image,TextInput,Modal,KeyboardAvoidingView } from 'react-native';
 
 export default class writeStoryScreen extends React.Component{
+  constructor(){
+    super();
+    this.state={
+TitleOfTheStory:"",
+AuthorOfTheStory:"",
+WriteStory:""
+    }
+  }
     render(){
         return(
-          <View  style={{flex:1}}>
-              <View>
-                 <View>
-                  <TextInput
+<View style={{flex:1}}>
+<TextInput
         style={styles.inputBox}
-        placeholder="Name"
-        multiline={true}
-        onChangeText={(text)=>{this.setState({address:text})}}/>
+        placeholder="Title Of The Story"
+        onChangeText={(text)=>{this.setState({TitleOfTheStory:text})}}/>
         <TextInput
         style={styles.inputBox}
-        placeholder="AuthorName"
-        multiline={true}
-        onChangeText={(text)=>{this.setState({address:text})}}/>
+        placeholder="Author Of The Story"
+        maxLength={8}
+        onChangeText={(text)=>{this.setState({AuthorOfTheStory:text})}}/>
         <TextInput
         style={styles.inputBox}
-        placeholder="Story"
-        multiline={true}
-        onChangeText={(text)=>{this.setState({address:text})}}/> 
-              </View>
-              <View>
-                 <TouchableOpacity style={styles.Button}
-        onPress={()=>this.setState({"isModalVisible":true})}>
-            <Text>
-                SUBMIT
-            </Text>  
-              </View>
-          
-              </View>
-             
-          </View>  
+        placeholder="Write Story"
+        maxLength={8}
+        onChangeText={(text)=>{this.setState({WriteStory:text})}}/>
+</View>   
         )
     }
 }
