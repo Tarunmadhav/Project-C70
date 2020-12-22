@@ -14,7 +14,7 @@ render(){
 }
 
 }
-const AppContainer=createAppContainer(TabNavigator);
+
 const TabNavigator = createBottomTabNavigator({
   readStory:  readStoryScreen,
   writeStory: writeStoryScreen,
@@ -45,3 +45,4 @@ const TabNavigator = createBottomTabNavigator({
   })
 }
 );
+const AppContainer=createAppContainer(TabNavigator);

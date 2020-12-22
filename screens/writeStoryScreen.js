@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header} from "react-native-elements";
-import { StyleSheet, Text, View,Image,TextInput,Modal,KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View,Image,TextInput,Modal,KeyboardAvoidingView,TouchableOpacity } from 'react-native';
+import { Alert } from 'react-native';
 
 export default class writeStoryScreen extends React.Component{
   constructor(){
@@ -28,6 +29,14 @@ WriteStory:""
         placeholder="Write Story"
         maxLength={8}
         onChangeText={(text)=>{this.setState({WriteStory:text})}}/>
+        <View>
+          <TouchableOpacity onPress={()=>Alert.alert("Story Submitted")}>
+            <Text>
+            Submit
+          </Text> 
+          </TouchableOpacity>
+         
+        </View>
 </View>   
         )
     }
